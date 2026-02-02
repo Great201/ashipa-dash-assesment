@@ -14,7 +14,7 @@ export interface TableColumn {
   standalone: true,
   imports: [MatButtonModule, MatIconModule, MatSelectModule, MatTableModule],
   templateUrl: './data-table.component.html',
-  styleUrl: './data-table.component.css'
+  styleUrl: './data-table.component.css',
 })
 export class DataTableComponent {
   title = input<string>('');
@@ -46,12 +46,15 @@ export class DataTableComponent {
   });
 
   constructor() {
-    effect(() => {
-      const maxIndex = Math.max(0, this.pageCount() - 1);
-      if (this.pageIndex() > maxIndex) {
-        this.pageIndex.set(maxIndex);
-      }
-    });
+    effect(
+      () => {
+        const maxIndex = Math.max(0, this.pageCount() - 1);
+        if (this.pageIndex() > maxIndex) {
+          this.pageIndex.set(maxIndex);
+        }
+      },
+      { allowSignalWrites: true },
+    );
   }
 
   prevPage(): void {
