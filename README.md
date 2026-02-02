@@ -1,59 +1,45 @@
-# Ashipa
+# Ashipa Electric — Audits & Sites Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+Angular dashboard built to match the Ashipa Electric Corp. audit overview design. The implementation focuses on visual fidelity, Angular Material components, Bootstrap grid layout, and signal-driven state management for pagination.
 
-## Development server
+## Stack
+- Angular 21 (standalone components + signals + new template control flow)
+- Angular Material (MatTable, MatButton, MatIcon, MatCard)
+- Bootstrap 5 (layout/grid)
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Development
 
 ```bash
-ng generate component component-name
+npm install
+npm run start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Open `http://localhost:4200`.
+
+## Production build
 
 ```bash
-ng generate --help
+npm run build -- --configuration production
 ```
 
-## Building
+Build output is written to `dist/ashipa/browser`.
 
-To build the project run:
+## Docker (bonus)
 
 ```bash
-ng build
+docker build -t ashipa-dashboard .
+docker run --rm -p 8080:80 ashipa-dashboard
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Open `http://localhost:8080`.
 
-## Running unit tests
+## Design fidelity notes
+- Sidebar, topbar, cards, and tables are tuned to match spacing, typography, and shadows from the provided design.
+- Metric card icons are SVGs loaded from `/public` for 1:1 shape fidelity.
+- Pagination is implemented with signals (page index + page size) and updates reactively.
+- If the “Console/Body” font is provided, it can be dropped into `/public/fonts` and wired in `src/styles.css`.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Project structure (high level)
+- `src/app/components/` — sidebar, topbar, metrics, and reusable table components
+- `src/app/services/audit-data.service.ts` — mock data service for the two tables
+- `src/styles.css` — global theme tokens and base styles

@@ -1,0 +1,149 @@
+.sidebar {
+  background: var(--surface);
+  min-height: 100%;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: #1f1f1f;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.brand-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-strong);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.brand-subtitle {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+.brand-caret {
+  width: 36px;
+  height: 36px;
+  color: #1f1f1f;
+  margin-left: 10px;
+  transform: translateY(2px);
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+  display: block;
+  object-fit: contain;
+}
+
+.menu-section {
+  display: grid;
+  gap: 14px;
+}
+
+.menu-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.menu-list {
+  display: grid;
+  gap: 8px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--text-strong);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu-item mat-icon {
+  font-size: 20px;
+}
+
+.menu-item.active {
+  background: #d9d9d9;
+  font-weight: 600;
+}
+x
+.create-site {
+  margin-top: 12px;
+  background: #4b4b4b;
+  color: #ffffff;
+  border-radius: 1px;
+  padding: 12px 22px;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: none;
+  min-width: 210px;
+  justify-content: center;
+  border: none;
+}
+
+.create-site.mat-mdc-raised-button {
+  background: #4b4b4b;
+  color: #ffffff;
+  border-radius: 12px;
+}
+
+.create-site.mat-mdc-raised-button:not(:disabled) {
+  background: #4b4b4b;
+  color: #ffffff;
+  border-radius: 12px;
+}
+
+.create-site mat-icon {
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+}
+
+.support-link {
+  margin-top: 18px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 14px;
+}

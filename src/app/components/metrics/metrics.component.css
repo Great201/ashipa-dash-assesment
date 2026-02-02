@@ -1,0 +1,46 @@
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 0 32px 24px;
+}
+
+.metric-card {
+  border-radius: 16px;
+  padding: 4px 6px;
+  box-shadow: 0 10px 20px rgba(15, 15, 15, 0.08);
+}
+
+.metric-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+
+.metric-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.metric-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+}
+
+.metric-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

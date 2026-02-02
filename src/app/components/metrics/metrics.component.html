@@ -1,0 +1,19 @@
+<div class="metrics-grid">
+  @for (metric of metrics(); track metric.label) {
+    <mat-card class="metric-card">
+      <div class="metric-content">
+        <div>
+          <div class="metric-label">{{ metric.label }}</div>
+          <div class="metric-value">{{ metric.value }}</div>
+        </div>
+        <div
+          class="metric-icon"
+          [style.background]="metric.tint"
+          [style.color]="metric.accent"
+        >
+          <img [src]="metric.iconPath" alt="" class="metric-icon-img" />
+        </div>
+      </div>
+    </mat-card>
+  }
+</div>

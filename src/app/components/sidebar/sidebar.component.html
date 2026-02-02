@@ -1,0 +1,52 @@
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="brand-mark">
+      <img src="/logo.png" alt="Ashipa Electric Corp." class="brand-logo" />
+    </div>
+    <div class="brand-text">
+      <div class="brand-title">Ashipa Electric Corp.</div>
+      <div class="brand-subtitle">Click to switch workspace</div>
+    </div>
+    <button class="brand-caret" mat-icon-button type="button" aria-label="Workspace menu">
+      <mat-icon fontSet="material-icons-outlined">expand_more</mat-icon>
+    </button>
+  </div>
+
+  <div class="menu-section">
+    <div class="menu-title">Main Menu</div>
+    <nav class="menu-list">
+      @for (item of mainMenu; track item.label) {
+        <button
+          class="menu-item"
+          type="button"
+          [class.active]="item.active"
+        >
+          <mat-icon fontSet="material-icons-outlined">{{ item.icon }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </button>
+      }
+    </nav>
+  </div>
+
+  <div class="menu-section">
+    <div class="menu-title">Preferences</div>
+    <nav class="menu-list">
+      @for (item of preferences; track item.label) {
+        <button class="menu-item" type="button">
+          <mat-icon fontSet="material-icons-outlined">{{ item.icon }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </button>
+      }
+    </nav>
+  </div>
+
+  <button mat-raised-button class="create-site" type="button">
+    <mat-icon fontSet="material-icons-outlined">add</mat-icon>
+    Create new site
+  </button>
+
+  <button class="support-link" type="button">
+    <mat-icon fontSet="material-icons-outlined">support_agent</mat-icon>
+    <span>Support</span>
+  </button>
+</aside>

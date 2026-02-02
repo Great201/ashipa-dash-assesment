@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --font-body: "Console", "Inter", "Segoe UI", sans-serif;
+  --page-bg: #f3f4f6;
+  --surface: #ffffff;
+  --surface-alt: #f5f6f8;
+  --text-strong: #1f1f1f;
+  --text-muted: #8a8a8a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--page-bg);
+  color: var(--text-strong);
+}
+
+button {
+  font-family: inherit;
+}
+
+mat-card {
+  background: #ffffff;
+}
+
+.mat-mdc-select-panel {
+  border-radius: 12px;
+}
